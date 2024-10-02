@@ -6,6 +6,7 @@ A user megjelöl egy ajtót (amelyiket majd elszeretné vinni), de mielőtt a g�
 Majd megkérdezi a gép, hogy a játékos szeretne-e cserélni (itt azzal cserélhet, ami nem lett kinyitva, de nem kötelező cserélnie)
 - Ha a játékos egy olyan ajtót nyitott ki, ami a nyereményt rejtette, akkor a gép számolja, hogy a körök által hányszor nyert, a játék pedig folytatódjon.
 - Ha a játékos egy olyan ajtót nyitott ki, ami nem a nyereményt rejtette, akkor a gép számolja, hogy a körök által hányszor nem nyert, a játék pedig folytatódjon.
+
 Statisztika: hányszor kapta meg a nyereményt cseréléses módszerrel és hányszor nem kapta meg a nyereményt.
 
 
