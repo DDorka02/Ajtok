@@ -8,6 +8,7 @@ Majd megkérdezi a gép, hogy a játékos szeretne-e cserélni (itt azzal cseré
 - Ha a játékos egy olyan ajtót nyitott ki, ami nem a nyereményt rejtette, akkor a gép számolja, hogy a körök által hányszor nem nyert, a játék pedig folytatódjon.
 
 Valamint a nyeremény, minden egyes játék során máshova kerül
+
 Statisztika: hányszor kapta meg a nyereményt cseréléses módszerrel és hányszor nem kapta meg a nyereményt.
 
 
