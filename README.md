@@ -14,3 +14,5 @@ Valamint a nyeremény, minden egyes játék során máshova kerül.
 Statisztika: hányszor kapta meg a nyereményt cseréléses módszerrel és hányszor nem kapta meg a nyereményt.
 
 
+<img width="650" alt="image" src="https://github.com/user-attachments/assets/9f552c84-1f51-47e9-bf41-226b0668b6f2">
+
