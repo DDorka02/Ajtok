@@ -13,9 +13,19 @@ public class AjtokGUI extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(rootPane, uzenet);
     }
     
-    public void bekeres(){
-    }
-    
+    public int bekeres(){
+
+        int v = -1;
+        if(rbtnGomg1.isSelected()){
+            v = 0;
+        }else if(rbtnGomb2.isSelected()){
+            v = 1;
+        }else if(rbtnGomb3.isSelected()){
+            v = 2;
+        }
+            return v;
+        }
+
     
     
     public AjtokGUI() {

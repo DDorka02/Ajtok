@@ -25,5 +25,18 @@ public class AjtoModell {
         }
         return s;
     }
+    public int getValasztas() {
+        return valasztas;
+    }
+
+    public void setValasztas(int valasztas) {
+        this.valasztas = valasztas;
+    }
+    
+    public String ellenorzes(){
+        String s = "Gratulálok, eltaláltad!";
+        s = ajtok[valasztas].isKincs() ? s : "Sajnos nem talált!";
+        return s;
+    }        
     
 }
