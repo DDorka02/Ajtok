@@ -1,36 +1,46 @@
 package ajtok;
 
+
+import java.util.Random;
 import javax.swing.JOptionPane;
 
 
 public class AjtokGUI extends javax.swing.JFrame {
+    private int kincs;
+    private int kincstelen;
+    private Random random;
 
-    public void megjelenit(String uzenet){
-        lblLeiras.setText(uzenet);
-    }
-    
-    public void vissszajelzes(String uzenet){
-        JOptionPane.showMessageDialog(rootPane, uzenet);
-    }
-    
-    public int bekeres(){
-
-        int v = -1;
-        if(rbtnGomg1.isSelected()){
-            v = 0;
-        }else if(rbtnGomb2.isSelected()){
-            v = 1;
-        }else if(rbtnGomb3.isSelected()){
-            v = 2;
-        }
-            return v;
-        }
-
-    
-    
     public AjtokGUI() {
+        kincs = -1;
+        kincstelen = -1;
         initComponents();
+        kincsElhelyezese();
     }
+    private void kincs() {
+        random = new Random();
+        kincs = random.nextInt(3); // Véletlen ajtó index (0, 1 vagy 2)
+    }
+
+                   
+    private void kincstelen(int valasztottAjto){
+        for (int i=0; i < 3; i++) {
+            if(i!=kincs && i!= valasztottAjto){
+                kincstelen=i;
+            }
+        }
+            
+        int csere = 0;
+            if(kincstelen!=-1){
+                csere = JOptionPane.showConfirmDialog(rootPane, (kincstelen + 1) + ". emögött az ajtó mögött nincs kincs. Szeretnél ajtót cserélni?", "Csere", JOptionPane.YES_NO_OPTION);
+            }
+            if(csere == JOptionPane.NO_OPTION){
+                if (valasztottAjto == kincs) {
+                JOptionPane.showMessageDialog(rootPane, "Ez ajtó mögött: Kincs!");
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Ez ajtó mögött: üres!");
+            }
+            }
+        }
 
 
     @SuppressWarnings("unchecked")
@@ -102,15 +112,25 @@ public class AjtokGUI extends javax.swing.JFrame {
 
         buttonGroup2.add(rbtnGomb3);
         rbtnGomb3.setText("3. Ajtó");
+        rbtnGomb3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtnGomb3MouseClicked(evt);
+            }
+        });
 
         buttonGroup2.add(rbtnGomb2);
         rbtnGomb2.setText("2. Ajtó");
+        rbtnGomb2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtnGomb2MouseClicked(evt);
+            }
+        });
 
         buttonGroup2.add(rbtnGomg1);
         rbtnGomg1.setText("1. Ajtó");
-        rbtnGomg1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbtnGomg1ActionPerformed(evt);
+        rbtnGomg1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtnGomg1MouseClicked(evt);
             }
         });
 
@@ -209,9 +229,17 @@ public class AjtokGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void rbtnGomg1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnGomg1ActionPerformed
+    private void rbtnGomg1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnGomg1MouseClicked
+        
+    }//GEN-LAST:event_rbtnGomg1MouseClicked
+
+    private void rbtnGomb2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnGomb2MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_rbtnGomg1ActionPerformed
+    }//GEN-LAST:event_rbtnGomb2MouseClicked
+
+    private void rbtnGomb3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnGomb3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbtnGomb3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -275,4 +303,8 @@ public class AjtokGUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbtnGomb3;
     private javax.swing.JRadioButton rbtnGomg1;
     // End of variables declaration//GEN-END:variables
+
+    private void kincsElhelyezese() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
